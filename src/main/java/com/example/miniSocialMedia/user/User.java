@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 @Setter
 @EqualsAndHashCode
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;

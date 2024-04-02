@@ -7,10 +7,7 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Entity(name = "posts")
 @Table(name = "posts")
@@ -20,7 +17,6 @@ import java.util.Set;
 @Setter
 @EqualsAndHashCode
 public class Post {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -32,5 +28,10 @@ public class Post {
 
     private Set<User> likedBy = new HashSet<>();
     private Set<Commentary> commentaries = new HashSet<>();
+
+    public Post(User owner) {
+        this.owner = owner;
+        this.createdAt = LocalDate.now();
+    }
 
 }
