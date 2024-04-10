@@ -21,9 +21,9 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-/*
+    @ManyToOne
     private User user;
-
+/*
     private LocalDate createdAt;
 
     private Set<User> likedBy = new HashSet<>();

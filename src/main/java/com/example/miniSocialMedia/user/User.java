@@ -1,10 +1,14 @@
 package com.example.miniSocialMedia.user;
 
 
+import com.example.miniSocialMedia.posts.Post;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
 
 @Entity(name = "users")
 @Table(name = "users")
@@ -26,4 +30,7 @@ public class User {
     private String email;
     @Column(nullable = false)
     private LocalDate birthdate;
+
+    @OneToMany
+    private HashSet<Post> postList = new HashSet<>();
 }
