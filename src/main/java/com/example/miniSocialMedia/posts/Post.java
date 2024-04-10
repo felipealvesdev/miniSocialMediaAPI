@@ -21,8 +21,8 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(nullable = false, unique = true)
-    private User owner;
+/*
+    private User user;
 
     private LocalDate createdAt;
 
@@ -33,5 +33,5 @@ public class Post {
         this.owner = owner;
         this.createdAt = LocalDate.now();
     }
-
+*/
 }

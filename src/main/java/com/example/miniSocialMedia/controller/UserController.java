@@ -18,11 +18,8 @@ public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
         return ResponseEntity.status(HttpStatus.OK).body(userRepository.findAll());
     }
-
-
 }

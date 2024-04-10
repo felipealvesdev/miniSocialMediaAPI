@@ -1,10 +1,10 @@
 package com.example.miniSocialMedia.user;
 
+
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity(name = "users")
 @Table(name = "users")
@@ -14,8 +14,9 @@ import java.time.LocalDateTime;
 @Setter
 @EqualsAndHashCode
 public class User {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(nullable = false)
     private String firstName;
@@ -25,5 +26,4 @@ public class User {
     private String email;
     @Column(nullable = false)
     private LocalDate birthdate;
-
 }
