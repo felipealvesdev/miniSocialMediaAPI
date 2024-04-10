@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity(name = "users")
 @Table(name = "users")
@@ -31,6 +32,8 @@ public class User {
     @Column(nullable = false)
     private LocalDate birthdate;
 
-    @OneToMany
-    private HashSet<Post> postList = new HashSet<>();
+    @OneToMany(mappedBy = "user")
+    private Set<Post> postList = new HashSet<>();
+    /*@ManyToMany(mappedBy = "likedBy")
+    private Set<Post> likedPostslist = new HashSet<>();*/
 }

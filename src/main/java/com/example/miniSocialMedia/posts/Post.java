@@ -2,6 +2,7 @@ package com.example.miniSocialMedia.posts;
 
 import com.example.miniSocialMedia.commentaries.Commentary;
 import com.example.miniSocialMedia.user.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,17 +22,21 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @JsonIgnore
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
-/*
-    private LocalDate createdAt;
 
+    private LocalDate createdAt;
+/*
+    @ManyToMany(mappedBy = "likedPostsList")
     private Set<User> likedBy = new HashSet<>();
+
     private Set<Commentary> commentaries = new HashSet<>();
 
-    public Post(User owner) {
-        this.owner = owner;
+    public Post(User user) {
+        this.user = user;
         this.createdAt = LocalDate.now();
-    }
-*/
+    }*/
+
 }
