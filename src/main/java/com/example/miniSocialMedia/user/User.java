@@ -1,6 +1,7 @@
 package com.example.miniSocialMedia.user;
 
 
+import com.example.miniSocialMedia.commentaries.Commentary;
 import com.example.miniSocialMedia.posts.Post;
 import jakarta.persistence.*;
 import lombok.*;
@@ -34,6 +35,9 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private Set<Post> postsList = new HashSet<>();
+
+    @OneToMany(mappedBy = "user")
+    private Set<Commentary> commentariesList = new HashSet<>();
 
 
     @ManyToMany

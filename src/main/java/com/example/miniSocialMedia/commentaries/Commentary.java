@@ -2,6 +2,7 @@ package com.example.miniSocialMedia.commentaries;
 
 
 import com.example.miniSocialMedia.user.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 
@@ -15,8 +16,11 @@ public class Commentary {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @JsonIgnore
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
+
 /*     @Column(nullable = false)
     private String commentary;
     private LocalDate createdAt;
