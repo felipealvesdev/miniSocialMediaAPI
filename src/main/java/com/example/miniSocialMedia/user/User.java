@@ -32,13 +32,15 @@ public class User {
     @Column(nullable = false)
     private LocalDate birthdate;
 
+    @OneToMany(mappedBy = "user")
+    private Set<Post> postsList = new HashSet<>();
+
+
     @ManyToMany
     @JoinTable(
             name = "userLikedPosts",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "post_id")
     )
-    private Set<Post> postList = new HashSet<>();
-    /*@ManyToMany(mappedBy = "likedBy")
-    private Set<Post> likedPostslist = new HashSet<>();*/
+    private Set<Post> likedPostslist = new HashSet<>();
 }

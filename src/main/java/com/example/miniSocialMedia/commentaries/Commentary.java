@@ -1,6 +1,7 @@
 package com.example.miniSocialMedia.commentaries;
 
 
+import com.example.miniSocialMedia.user.User;
 import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 
@@ -13,9 +14,10 @@ public class Commentary {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-/*    @Column(nullable = false, unique = true)
-    private User owner;
-    @Column(nullable = false)
+
+    @ManyToOne
+    private User user;
+/*     @Column(nullable = false)
     private String commentary;
     private LocalDate createdAt;
 
