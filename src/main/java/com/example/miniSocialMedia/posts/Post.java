@@ -29,7 +29,7 @@ public class Post {
 
     private LocalDate createdAt;
 
-    @ManyToMany(mappedBy = "likedPostslist")
+    @ManyToMany(mappedBy = "likedPostsList")
     private Set<User> likedBy = new HashSet<>();
 /*
     private Set<Commentary> commentaries = new HashSet<>();

@@ -46,5 +46,13 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "post_id")
     )
-    private Set<Post> likedPostslist = new HashSet<>();
+    private Set<Post> likedPostsList = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(
+            name = "userLikedCommentaries",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "commentary_id")
+    )
+    private Set<Commentary> likedCommentariesList = new HashSet<>();
 }

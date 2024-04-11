@@ -21,15 +21,15 @@ public class Commentary {
     @JoinColumn(name = "user_id")
     private User user;
 
-/*     @Column(nullable = false)
+    @Column(nullable = false)
     private String commentary;
     private LocalDate createdAt;
 
+    @ManyToMany(mappedBy = "likedCommentariesList")
     private Set<User> likedBy = new HashSet<>();
 
-    public Commentary(User owner) {
-        this.owner = owner;
+    public Commentary(User user) {
+        this.user = user;
         this.createdAt = LocalDate.now();
     }
-*/
 }
