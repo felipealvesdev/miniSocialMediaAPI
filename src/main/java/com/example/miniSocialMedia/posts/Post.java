@@ -28,15 +28,15 @@ public class Post {
     private User user;
 
     private LocalDate createdAt;
-/*
-    @ManyToMany(mappedBy = "likedPostsList")
+
+    @ManyToMany(mappedBy = "postList")
     private Set<User> likedBy = new HashSet<>();
-
+/*
     private Set<Commentary> commentaries = new HashSet<>();
-
+*/
     public Post(User user) {
         this.user = user;
         this.createdAt = LocalDate.now();
-    }*/
+    }
 
 }
